@@ -11,10 +11,12 @@ public class GameManager : MonoBehaviour
     private Text debugText = null;
 
     /* Instances in this method get injected by Zenject
-     * and it is assumed they were configured in SetupInstaller.cs 
-     */
+     * and it is assumed they were configured in 
+     * SetupInstaller.cs */
     [Inject]
-    public void Setup(DiagnosticsManager diagnosticsManager, UIManager uiManager) 
+    public void Setup(
+        DiagnosticsManager diagnosticsManager, 
+        UIManager uiManager) 
     {
         uiManager.BindUI(debugText);
         diagnosticsManager.Status();
